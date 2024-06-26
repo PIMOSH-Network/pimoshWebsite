@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 const mainRouter = require('./routes/mainRoute');
+const interestRouter = require('./routes/interestRoute');
 
 // Set EJS as templating engine
 app.set('view engine', 'ejs');
@@ -14,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
 app.use('/', mainRouter);
-
+app.use('/interests', interestRouter);
 
 // Server
 const PORT = process.env.PORT || 3000;

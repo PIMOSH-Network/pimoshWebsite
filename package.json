@@ -9,9 +9,11 @@
   "author": "PIMOSH Interns 2024",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "bootstrap": "^5.3.3",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
+    "mongoose": "^8.4.4",
     "node": "^20.15.0",
     "nodemon": "^3.1.4"
   }
