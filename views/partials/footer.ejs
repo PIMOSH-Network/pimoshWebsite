@@ -1,19 +1,49 @@
-<footer class="container-fluid">
-    <div class="row">
-        <div class="col text-center">
-            <small>
-                <a href="#">Be A Tutor</a> • 
-                <a href="#">Get A Tutor</a> • 
-                <a href="#">Download Enrollment Forms</a> • 
-                <a href="#">Contact PIMOSH Here</a> • 
-                <a href="#">Apply for Arts Jobs</a>
-            </small>
+<footer class="footer fixed-bottom">
+    <div class="container-fluid">
+        <div class="row py-2">
+            <div class="col-md-2 text-center text-md-left mb-2 mb-md-0">
+                <small>&copy; <span id="year"></span> PIMOSH Network. All rights reserved.</small>
+            </div>
+            <div class="col-md-2">
+                <ul class="list-unstyled mb-0">
+                    <li><a href="#">Tutorial Services</a></li>
+                    <li><a href="#">Be A Tutor</a></li>
+                    <li><a href="#">Get A Tutor</a></li>
+                    <li><a href="#">Download Enrollment Forms</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <ul class="list-unstyled mb-0">
+                    <li><a href="#">Intensive Arts Institute</a></li>
+                    <li><a href="#">Download Arts Forms</a></li>
+                    <li><a href="#">Apply for Arts Jobs</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <ul class="list-unstyled mb-0">
+                    <li><a href="#">Tech Titans</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 text-center text-md-right">
+                <a href="https://twitter.com/your_twitter_profile" target="_blank">
+                    <i class='bx bxl-twitter media-links'></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100090102502000" target="_blank">
+                    <i class='bx bxl-facebook-circle media-links'></i>
+                </a>
+                <a href="https://www.instagram.com/gsa_uncc" target="_blank">
+                    <i class='bx bxl-instagram media-links'></i>
+                </a>
+            </div>
         </div>
     </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</body>
-</html>
-
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
