@@ -17,3 +17,13 @@
     - You should be able to see the website
 
 ## Tasks
+- Header - Kwame
+- Footer - Kwame
+- Homepage - Alena
+- About Us - Zahra
+- Tutoring - Shama
+- Testimonials - Numa
+- Events (Front-end) - Adrian
+- Events (Back-end) - Teja
+- Interest form - James
+- Contact Us - Laleen
