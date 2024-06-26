@@ -1,7 +1,7 @@
 # PIMOSH Website
 ## Table of Contents
 - [How to get started](https://github.com/PIMOSH-Network/pimoshWebsite?tab=readme-ov-file#how-to-get-started)
-- [Tasks]
+- [Tasks](https://github.com/PIMOSH-Network/pimoshWebsite?tab=readme-ov-file#tasks)
 
 ## How to get started
 - Open the folder you want the repository in
@@ -15,3 +15,5 @@
     - In terminal, run: `npx nodemon app`
 - Open your browser and type in `localhost:3000` 
     - You should be able to see the website
+
+## Tasks
