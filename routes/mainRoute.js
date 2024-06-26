@@ -26,4 +26,7 @@ router.get('/faq', controller.getFaq);
 // Set up Contact Route 
 router.get('/contact', controller.getContact);
 
+// Set up Interest Route 
+router.get('/interest', controller.getInterest);
+
 module.exports = router;
