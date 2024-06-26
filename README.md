@@ -1,4 +1,8 @@
 # PIMOSH Website
+## Table of Contents
+- [How to get started](https://github.com/PIMOSH-Network/pimoshWebsite?tab=readme-ov-file#how-to-get-started)
+- [Tasks]
+
 ## How to get started
 - Open the folder you want the repository in
     - Open terminal and type: `git clone https://github.com/PIMOSH-Network/pimoshWebsite.git`
