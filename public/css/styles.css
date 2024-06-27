@@ -109,13 +109,22 @@ p {
 
 /* Footer */
 .footer {
-    background-color: #79507A;
+    background-color: #30162b;
     color: #fff;
     width: 100%;
     position: fixed;
     bottom: 0;
     padding: 10px 0; /* Reduced padding for compact layout */
-    text-align: center;
+}
+
+.footer {
+    background-color: #79507A;
+    color: #fff;
+    width: 100%;
+    
+    position: fixed;
+    bottom: 0;
+    padding: 10px 0; /* Reduced padding for compact layout */
 }
 
 .footer a {
@@ -169,7 +178,71 @@ p {
     padding: 0 15px;
 }
 
-/* Carousel */
+@media (max-width: 768px) {
+    .footer {
+        text-align: center;
+    }
+    
+    .media-links {
+        font-size: 1.2em;
+        margin: 0 5px;
+    }
+}
+main {
+    flex: 1;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.navbar {
+    background-color: #79507A;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.navbar a.nav-link {
+    color: #fff;
+}
+
+.navbar a.nav-link:hover {
+    color: #ccc;
+}
+
+.navbar-logo {
+    height: 50px;
+}
+
+√
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        text-align: center;
+    }
+    
+    .media-links {
+        font-size: 1.2em;
+        margin: 0 5px;
+    }
+}
+
 .carousel-item img {
     width: 100%;
     height: 512px;
@@ -184,7 +257,7 @@ p {
 .carousel-indicators button {
     width: 12px;
     height: 12px;
-    background-color: #6a1b9a;
+    background-color: #30162b;
     border: none;
     transform: rotate(45deg);
 }
@@ -218,7 +291,7 @@ p {
 }
 
 .icon-container {
-    background: #79507A;
+    background: #30162b;
     color: #fff;
     width: 60px;
     height: 60px;

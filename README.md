@@ -2,6 +2,7 @@
 ## Table of Contents
 - [How to get started](https://github.com/PIMOSH-Network/pimoshWebsite?tab=readme-ov-file#how-to-get-started)
 - [Tasks](https://github.com/PIMOSH-Network/pimoshWebsite?tab=readme-ov-file#tasks)
+- [Helpful Resources](https://github.com/PIMOSH-Network/pimoshWebsite?tab=readme-ov-file#helpful-resources)
 
 ## How to get started
 - Open the folder you want the repository in
@@ -27,3 +28,17 @@
 - Events (Back-end) - Teja
 - Interest form - James
 - Contact Us - Laleen
+
+## Helpful Resources
+### Bootstrap
+- https://getbootstrap.com/docs/5.3/getting-started/introduction/
+- https://www.codecademy.com/learn/learn-bootstrap
+- https://www.w3schools.com/bootstrap/
+
+### HTML
+- https://www.w3schools.com/html/
+- https://www.codecademy.com/learn/learn-html
+
+### CSS
+- https://www.codecademy.com/learn/learn-css
+- https://www.w3schools.com/Css/
