@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
-
+const PORT = process.env.PORT || 3000;
 
 
 // Set EJS as templating engine
@@ -19,12 +19,12 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Connect to database
+// Connect to database and server
 const dbURI = 'mongodb+srv://pimoshpublishing:pimosh299!@cluster0.f8ctnu9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
-        app.listen(process.env.PORT || 3001, () => {
-            console.log('Server is running on port', process.env.PORT || 3001);
+        app.listen(process.env.PORT || 3000, () => {
+            console.log('Server is running on port', process.env.PORT || 3000);
         });
     })
     .catch(err => console.error(err));
@@ -55,12 +55,3 @@ app.use((req, res, next) => {
 // Routes
 app.use('/', mainRouter);
 app.use('/users', userRouter);
-
-// Server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
-
-
-
