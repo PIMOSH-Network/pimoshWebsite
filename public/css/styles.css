@@ -14,12 +14,6 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-}
-
-/* Text Elements */
-h1, h2, h3 {
-    color: #2c3e50;
 }
 
 main {
@@ -27,31 +21,26 @@ main {
     padding-top: 70px; /* Add padding to avoid content being hidden behind fixed navbar */
 }
 
+/* Text Elements */
+h1, h2, h3 {
+    color: #2c3e50;
+}
+
 p {
     font-size: 1em;
     line-height: 1.5;
-}
-
-/* Navbar and Carousel Container */
-.header-container {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: #79507A;
 }
 
 /* Navbar */
 .navbar {
     background-color: #79507A;
     width: 100%;
+    height: 70px;
+    z-index: 1000;
     display: flex;
     align-items: center;
-}
-
-.navbar .navbar-brand {
-    display: flex;
-    align-items: center;
+    position: relative;
+    top: 0;
 }
 
 .navbar a.nav-link {
@@ -64,11 +53,6 @@ p {
 
 .navbar-logo {
     height: 50px;
-}
-
-/* Centered Navbar Links */
-.navbar .navbar-nav {
-    margin: 0 auto;
 }
 
 /* Dropdown Menu */
@@ -94,6 +78,8 @@ p {
     color: #212529;
     text-align: left;
     list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 0.25rem;
 }
@@ -122,20 +108,18 @@ p {
 /* Carousel */
 .carousel {
     position: relative;
-    z-index: 1;
-   
+    /* z-index: 1; */
 }
 
 .carousel-item img {
     width: 100%;
     height: 256px;
     object-fit: cover;
-   
 }
 
 .carousel-caption {
     background: rgba(0, 0, 0, 0.5);
-    padding: 0;
+    padding: 10px;
 }
 
 .carousel-indicators button {
@@ -157,7 +141,7 @@ p {
     color: #fff;
     width: 100%;
     height: 30%;
-    position: relative;
+    position: fixed;
     bottom: 0;
     padding: 10px 0; /* Reduced padding for compact layout */
     text-align: left;
@@ -231,7 +215,7 @@ p {
     text-align: left;
     width: 100%;
     max-width: 300px; /* Adjust the max width as needed */
-    min-height: px; /* Ensures all cards are the same height */
+    min-height: 400px; /* Ensures all cards are the same height */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
