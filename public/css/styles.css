@@ -16,7 +16,7 @@ body {
     min-height: 100vh;
 }
 .footer {
-    background-color: #79507A;
+    background-color: #30162b;
     color: #fff;
     width: 100%;
     position: fixed;
@@ -25,7 +25,7 @@ body {
 }
 
 .footer {
-    background-color: #79507A;
+    background-color: #30162b;
     color: #fff;
     width: 100%;
     
@@ -114,7 +114,7 @@ p {
 }
 
 .navbar {
-    background-color: #79507A;
+    background-color: #30162b;
     position: fixed;
     top: 0;
     width: 100%;
@@ -169,7 +169,7 @@ p {
 .carousel-indicators button {
     width: 12px;
     height: 12px;
-    background-color: #6a1b9a;
+    background-color: #30162b;
     border: none;
     transform: rotate(45deg);
 }
@@ -202,7 +202,7 @@ p {
 }
 
 .icon-container {
-    background: #79507A;
+    background: #30162b;
     color: #fff;
     width: 60px;
     height: 60px;
