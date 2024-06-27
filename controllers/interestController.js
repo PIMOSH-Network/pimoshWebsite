@@ -6,6 +6,10 @@ exports.getInterest = (req, res, next) => {
     res.render('./interestUser/signup');
 };
 
+exports.getLogin = (req, res, next) => {
+    res.render('./interestUser/login');
+};
+
 // exports.getLogin = (req, res, next) => {
 //     res.render('interestUser/login');
 // };
