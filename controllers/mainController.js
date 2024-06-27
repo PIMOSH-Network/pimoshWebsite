@@ -29,7 +29,3 @@ exports.getFaq = (req, res, next) => {
 exports.getContact = (req, res, next) => {
     res.render('contact');
 };
-
-exports.getInterest = (req, res, next) => {
-    res.render('interest');
-};
