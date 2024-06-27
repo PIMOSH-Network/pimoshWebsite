@@ -5,13 +5,103 @@
     font-family: 'Poppins', Arial, sans-serif;
 }
 
-body {
-    font-family: Arial, sans-serif;
+html, body {
+    height: 100%;
     margin: 0;
-    padding: 0;
+}
+
+body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+.footer {
+    background-color: #30162b;
+    color: #fff;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 10px 0; /* Reduced padding for compact layout */
+}
+
+.footer {
+    background-color: #30162b;
+    color: #fff;
+    width: 100%;
+    
+    position: fixed;
+    bottom: 0;
+    padding: 10px 0; /* Reduced padding for compact layout */
+}
+
+.footer a {
+    color: #fff;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer ul {
+    padding-left: 0;
+    margin: 0; /* Reduced margin for compact layout */
+}
+
+.footer ul li {
+    list-style: none;
+    margin-bottom: 5px; /* Reduced margin for compact layout */
+}
+
+.footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer ul li a:hover {
+    text-decoration: underline;
+}
+
+.media-links {
+    font-size: 1.5em;
+    margin: 0 10px;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        text-align: center;
+    }
+    
+    .media-links {
+        font-size: 1.2em;
+        margin: 0 5px;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        text-align: center;
+    }
+    
+    .media-links {
+        font-size: 1.2em;
+        margin: 0 5px;
+    }
+}
+main {
+    flex: 1;
 }
 
 h1, h2, h3 {
@@ -24,7 +114,7 @@ p {
 }
 
 .navbar {
-    background-color: #6a1b9a;
+    background-color: #30162b;
     position: fixed;
     top: 0;
     width: 100%;
@@ -46,32 +136,23 @@ p {
     height: 50px;
 }
 
-.large-logo {
-    max-width: 500px;
-    margin-bottom: 20px;
-    align-items: flex-start;
+√
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
-footer {
-    background-color: #6a1b9a;
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 70px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 0;
-}
-
-footer a {
-    color: #fff;
-}
-
-footer a:hover {
-    text-decoration: underline;
+@media (max-width: 768px) {
+    .footer {
+        text-align: center;
+    }
+    
+    .media-links {
+        font-size: 1.2em;
+        margin: 0 5px;
+    }
 }
 
 .carousel-item img {
@@ -88,7 +169,7 @@ footer a:hover {
 .carousel-indicators button {
     width: 12px;
     height: 12px;
-    background-color: #6a1b9a;
+    background-color: #30162b;
     border: none;
     transform: rotate(45deg);
 }
@@ -96,13 +177,6 @@ footer a:hover {
 .carousel-indicators .active {
     background-color: #fff;
     transform: rotate(45deg);
-}
-
-main.container {
-    padding-top: 70px; /* Adjust based on navbar height */
-    padding-bottom: 70px; /* Adjust based on footer height */
-    margin: 0 auto;
-    flex: 1;
 }
 
 .head-serv {
@@ -114,21 +188,21 @@ main.container {
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
+    padding: 20px;
     margin: 10px;
     position: relative;
     overflow: hidden;
     text-align: left;
     width: 100%;
-    max-width: 400px; /* Adjust the max width as needed */
-    min-height: 200px; /* Ensures all cards are the same height */
+    max-width: 300px; /* Adjust the max width as needed */
+    min-height: 400px; /* Ensures all cards are the same height */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .icon-container {
-    background: #6a1b9a;
+    background: #30162b;
     color: #fff;
     width: 60px;
     height: 60px;
@@ -141,23 +215,4 @@ main.container {
     top: -30px;
     left: 50%;
     transform: translateX(-50%);
-}
-
-.icon-container i {
-    font-size: 24px;
-}
-
-.service-card h3 {
-    margin-top: 40px;
-    font-size: 1.5em;
-}
-
-.service-card p {
-    margin-top: 10px;
-    font-size: 1em;
-    line-height: 1.5;
-}
-
-.service-card .btn {
-    margin-top: 20px;
 }
