@@ -1,9 +1,8 @@
 const model = require('../models/user');
-
 const { hostname } = require('os');
 
 exports.getSignup = (req, res, next) => {
-    console.log('HELLO WORLD, getSignup')
+    console.log('getSignup is running')
     res.render('./user/signup');
 };
 
@@ -12,27 +11,8 @@ exports.getLogin = (req, res, next) => {
 };
 
 
-// const userModel = require('./models/user')
-
-// const newUser = new userModel({
-//     firstName: 'John',
-//     lastName: 'Doe',
-//     email: 'john.doe@example.com',
-//     password: 'hashedPassword'
-//   });
-  
-//   newUser.save()
-//     .then(savedUser => {
-//       console.log('User saved to database:', savedUser);
-//       // You can also redirect, send a response, or perform further actions here
-//     })
-//     .catch(err => {
-//       console.error('Error saving user to database:', err);
-//       // Handle error appropriately (e.g., show error messages, redirect, etc.)
-//     });
-
 exports.create = (req, res, next)=>{
-    console.log('HELLO WORLD')
+    console.log('exports.create is running')
     let user = new model(req.body);
     user.save()
     .then(() => res.redirect('/users/login'))
@@ -43,6 +23,7 @@ exports.create = (req, res, next)=>{
         }
 
         if(err.code === 11000) {
+            console.log('EMAIL HAS BEEN USED')
             req.flash('error', 'Email has been used');  
             return res.redirect('/users/signup');
 }
@@ -51,24 +32,11 @@ exports.create = (req, res, next)=>{
 
 };
 
-
-exports.getProfile = (req, res, next) => {
-    let id = req.session.user;
-
-    // Use Promise.all to run multiple queries concurrently
-    Promise.all([
-        model.findById(id)
-        // Event.find({ hostName: id }), // Events hosted by the user
-        // rsvp.find({ user: id }).populate('event') // RSVPs for the user, with event data populated
-    ])
-    .then(results => {
-        const user = results;
-        console.log('user', req.session.user);
-
-        // // Extract events from the populated RSVPs
-        // const eventsFromRsvps = rsvps.map(rsvp => rsvp.event);
-
-        res.render('./user/profile', { user });
-    })
-    .catch(err => next(err));
+exports.login = (req, res, next) => {
+    console.log('getProfile is running')
+    res.redirect('/users/profile')
 };
+
+exports.getProfile = (req,res,next) => {
+    res.render('./user/profile')
+}
