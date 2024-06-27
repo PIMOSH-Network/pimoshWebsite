@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
+const { error } = require('console');
 const PORT = process.env.PORT || 3000;
 
 
@@ -21,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Connect to database and server
 const dbURI = 'mongodb+srv://pimoshpublishing:pimosh299!@cluster0.f8ctnu9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(dbURI)
     .then(() => {
         app.listen(process.env.PORT || 3000, () => {
             console.log('Server is running on port', process.env.PORT || 3000);
@@ -55,3 +56,16 @@ app.use((req, res, next) => {
 // Routes
 app.use('/', mainRouter);
 app.use('/users', userRouter);
+
+// Error handling
+app.use((req, res, next) => {
+    const err = new Error('The server cannot locate ' + req.url);
+    err.status = 404;
+    next(err);
+});
+
+app.use((err, req, res, next) => {
+    const errorStatus = err.status || 500;
+    res.status(errorStatus);
+    res.render('error', { err: { status: errorStatus, message: err.message } });
+});

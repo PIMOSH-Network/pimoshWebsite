@@ -19,10 +19,11 @@ exports.validateId = (req, res, next) => {
       return next(); 
     }
 
-exports.validateSignUp = [body('firstName','First name is required ').notEmpty().trim().escape(),
-    body('lastName','Last Name is required').notEmpty().trim().escape(),
-    body('email','Email is not valid').isEmail().trim().escape().normalizeEmail(), 
-    body('password', 'Password must be at 8 characters and atmost 64 characters').isLength({min: 8, max: 64})];
+exports.validateSignUp = [
+    body('firstName', 'First name is required').notEmpty().trim().escape(),
+    body('lastName', 'Last Name is required').notEmpty().trim().escape(),
+    body('email', 'Email is not valid').isEmail().trim().escape().normalizeEmail(),
+    body('password', 'Password must be between 8 and 64 characters').isLength({ min: 8, max: 64 })];
 
 exports.validateLogIn = [body('email','Email must be a valid email address').isEmail().trim().escape().normalizeEmail(), 
     body('password', 'Password must be at 8 characters and atmost 64 characters').isLength({min: 8, max: 64})];
