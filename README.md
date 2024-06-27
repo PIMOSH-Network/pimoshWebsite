@@ -28,6 +28,7 @@
 - Events (Back-end) - Teja
 - Interest form - James
 - Contact Us - Laleen
+- Tech Titans - Alena
 
 ## Helpful Resources
 ### Bootstrap
