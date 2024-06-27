@@ -2,12 +2,12 @@
 
 // const { hostname } = require('os');
 
-exports.getInterest = (req, res, next) => {
-    res.render('./interestUser/signup');
+exports.getSignup = (req, res, next) => {
+    res.render('./user/signup');
 };
 
 exports.getLogin = (req, res, next) => {
-    res.render('./interestUser/login');
+    res.render('./user/login');
 };
 
 // exports.getLogin = (req, res, next) => {

@@ -1,10 +1,10 @@
 const express = require('express');
-const controller = require('../controllers/interestController');
+const controller = require('../controllers/userController');
 const router = express.Router();
 
 
 // Set up Interest Route 
-router.get('/signup', controller.getInterest);
+router.get('/signup', controller.getSignup);
 
 // Set up Interest Route 
 router.get('/login', controller.getLogin);
