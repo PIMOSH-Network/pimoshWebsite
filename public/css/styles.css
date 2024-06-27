@@ -140,7 +140,8 @@ p {
     background-color: #79507A;
     color: #fff;
     width: 100%;
-    position: fixed;
+    height: 30%;
+    position: relative;
     bottom: 0;
     padding: 10px 0; /* Reduced padding for compact layout */
     text-align: left;
