@@ -8,18 +8,17 @@
 
 /* HTML and Body */
 html, body {
-    height: 100%;
     margin: 0;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
 main {
     flex: 1;
+    padding-top: 70px; /* Add padding to avoid content being hidden behind fixed navbar */
 }
 
 /* Text Elements */
@@ -35,13 +34,13 @@ p {
 /* Navbar */
 .navbar {
     background-color: #79507A;
-    position: fixed;
-    top: 0;
     width: 100%;
     height: 70px;
     z-index: 1000;
     display: flex;
     align-items: center;
+    position: relative;
+    top: 0;
 }
 
 .navbar a.nav-link {
@@ -91,7 +90,6 @@ p {
     font-weight: 400;
     color: #212529;
     text-align: inherit;
-    /* white-space: nowrap; */
     background-color: transparent;
     border: 0;
 }
@@ -107,24 +105,45 @@ p {
     border-top: 1px solid #e9ecef;
 }
 
-/* Footer */
-.footer {
-    background-color: #30162b;
-    color: #fff;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    padding: 10px 0; /* Reduced padding for compact layout */
+/* Carousel */
+.carousel {
+    position: relative;
+    /* z-index: 1; */
 }
 
+.carousel-item img {
+    width: 100%;
+    height: 256px;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    background-color: #79507A;
+    border: none;
+    transform: rotate(45deg);
+}
+
+.carousel-indicators .active {
+    background-color: #fff;
+    transform: rotate(45deg);
+}
+
+/* Footer */
 .footer {
     background-color: #79507A;
     color: #fff;
     width: 100%;
-    
     position: fixed;
     bottom: 0;
     padding: 10px 0; /* Reduced padding for compact layout */
+    text-align: left;
 }
 
 .footer a {
@@ -178,95 +197,6 @@ p {
     padding: 0 15px;
 }
 
-@media (max-width: 768px) {
-    .footer {
-        text-align: center;
-    }
-    
-    .media-links {
-        font-size: 1.2em;
-        margin: 0 5px;
-    }
-}
-main {
-    flex: 1;
-}
-
-h1, h2, h3 {
-    color: #2c3e50;
-}
-
-p {
-    font-size: 1em;
-    line-height: 1.5;
-}
-
-.navbar {
-    background-color: #79507A;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 70px;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-}
-
-.navbar a.nav-link {
-    color: #fff;
-}
-
-.navbar a.nav-link:hover {
-    color: #ccc;
-}
-
-.navbar-logo {
-    height: 50px;
-}
-
-√
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-@media (max-width: 768px) {
-    .footer {
-        text-align: center;
-    }
-    
-    .media-links {
-        font-size: 1.2em;
-        margin: 0 5px;
-    }
-}
-
-.carousel-item img {
-    width: 100%;
-    height: 512px;
-    object-fit: cover;
-}
-
-.carousel-caption {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-}
-
-.carousel-indicators button {
-    width: 12px;
-    height: 12px;
-    background-color: #30162b;
-    border: none;
-    transform: rotate(45deg);
-}
-
-.carousel-indicators .active {
-    background-color: #fff;
-    transform: rotate(45deg);
-}
-
 /* Services Section */
 .head-serv {
     text-align: center;
@@ -291,7 +221,7 @@ p {
 }
 
 .icon-container {
-    background: #30162b;
+    background: #79507A;
     color: #fff;
     width: 60px;
     height: 60px;
