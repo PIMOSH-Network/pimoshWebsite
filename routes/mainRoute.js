@@ -26,4 +26,6 @@ router.get('/faq', controller.getFaq);
 // Set up Contact Route 
 router.get('/contact', controller.getContact);
 
+// Set Up Tech Titans Route
+
 module.exports = router;
