@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt');
 const { timeStamp } = require('console');
 
-const interestSchema = new Schema({
+const usersSchema = new Schema({
     firstName: {type: String, required: [true, 'first name is required']},
     lastName: {type: String, required: [true, 'last name is required']},
     email: {type: String, required: [true, 'email address is required'], unique: [true, 'this email address has been used'] },
@@ -12,22 +12,22 @@ const interestSchema = new Schema({
 { timestamps: true }
 );
 
-interestSchema.pre('save', function(next){
-  let interest = this;
-  if (!interest.isModified('password'))
+usersSchema.pre('save', function(next){
+  let users = this;
+  if (!users.isModified('password'))
       return next();
-  bcrypt.hash(interest.password, 10)
+  bcrypt.hash(users.password, 10)
   .then(hash => {
-    interest.password = hash;
+    users.password = hash;
     next();
   })
   .catch(err => next(err));
 });
 
 
-interestSchema.methods.comparePassword = function(inputPassword) {
-  let interest = this;
-  return bcrypt.compare(inputPassword, interest.password);
+usersSchema.methods.comparePassword = function(inputPassword) {
+  let users = this;
+  return bcrypt.compare(inputPassword, users.password);
 }
 
-module.exports = mongoose.model('interest', interestSchema);
+module.exports = mongoose.model('users', usersSchema);

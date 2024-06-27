@@ -1,3 +1,4 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +6,7 @@
     font-family: 'Poppins', Arial, sans-serif;
 }
 
+/* HTML and Body */
 html, body {
     height: 100%;
     margin: 0;
@@ -15,6 +17,97 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
+
+main {
+    flex: 1;
+}
+
+/* Text Elements */
+h1, h2, h3 {
+    color: #2c3e50;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #79507A;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.navbar a.nav-link {
+    color: #fff;
+}
+
+.navbar a.nav-link:hover {
+    color: #ccc;
+}
+
+.navbar-logo {
+    height: 50px;
+}
+
+/* Dropdown Menu */
+.navbar .nav-item.dropdown {
+    position: relative;
+}
+
+.navbar .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.navbar .nav-item.dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0.125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+}
+
+.navbar .nav-item.dropdown .dropdown-menu .dropdown-item {
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    /* white-space: nowrap; */
+    background-color: transparent;
+    border: 0;
+}
+
+.navbar .nav-item.dropdown .dropdown-menu .dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+.navbar .nav-item.dropdown .dropdown-divider {
+    height: 0;
+    margin: 0.5rem 0;
+    overflow: hidden;
+    border-top: 1px solid #e9ecef;
+}
+
+/* Footer */
 .footer {
     background-color: #30162b;
     color: #fff;
@@ -25,7 +118,7 @@ body {
 }
 
 .footer {
-    background-color: #30162b;
+    background-color: #79507A;
     color: #fff;
     width: 100%;
     
@@ -67,12 +160,6 @@ body {
     color: #fff;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
 @media (max-width: 768px) {
     .footer {
         text-align: center;
@@ -84,6 +171,7 @@ body {
     }
 }
 
+/* Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -114,7 +202,7 @@ p {
 }
 
 .navbar {
-    background-color: #30162b;
+    background-color: #79507A;
     position: fixed;
     top: 0;
     width: 100%;
@@ -179,6 +267,7 @@ p {
     transform: rotate(45deg);
 }
 
+/* Services Section */
 .head-serv {
     text-align: center;
     font-style: inherit;
