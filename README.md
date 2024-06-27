@@ -22,7 +22,7 @@
 - Footer - Kwame
 - Homepage - Alena
 - About Us - Zahra
-- Tutoring - Shama
+- Tutoring - Shamsa
 - Testimonials - Numa
 - Events (Front-end) - Adrian
 - Events (Back-end) - Teja
