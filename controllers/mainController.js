@@ -6,7 +6,7 @@ exports.getAbout = (req, res, next) => {
     res.render('about_us');
 };
 
-exports.getTutoring = (req, res, next) => {
+exports.getTutor = (req, res, next) => {
     res.render('tutor');
 };
 
@@ -29,3 +29,4 @@ exports.getFaq = (req, res, next) => {
 exports.getContact = (req, res, next) => {
     res.render('contact');
 };
+
