@@ -9,6 +9,8 @@
 /* HTML and Body */
 html, body {
     margin: 0;
+    height: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -23,8 +25,9 @@ h1, h2, h3 {
 }
 
 main {
-    flex: 1;
-    padding-top: 70px; /* Add padding to avoid content being hidden behind fixed navbar */
+    /* flex: 1; */
+    padding-top: 10px; /* Add padding to avoid content being hidden behind fixed navbar */
+    padding-bottom: 10px; /* Add padding to avoid content being hidden behind fixed footer */
 }
 
 p {
@@ -34,10 +37,7 @@ p {
 
 /* Navbar and Carousel Container */
 .header-container {
-    position: fixed;
-    top: 0;
     width: 100%;
-    z-index: 1000;
     background-color: #79507A;
 }
 
@@ -47,6 +47,9 @@ p {
     width: 100%;
     display: flex;
     align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar .navbar-brand {
@@ -123,14 +126,13 @@ p {
 .carousel {
     position: relative;
     z-index: 1;
-   
+    margin-top: 70px; /* Add margin to avoid overlap with fixed navbar */
 }
 
 .carousel-item img {
     width: 100%;
     height: 256px;
     object-fit: cover;
-   
 }
 
 .carousel-caption {
@@ -156,11 +158,10 @@ p {
     background-color: #79507A;
     color: #fff;
     width: 100%;
-    height: 30%;
-    position: relative;
-    bottom: 0;
+    height: auto;
     padding: 10px 0; /* Reduced padding for compact layout */
     text-align: left;
+    margin-top: auto; /* Pushes footer to the bottom if content is short */
 }
 
 .footer a {
@@ -200,7 +201,7 @@ p {
     .footer {
         text-align: center;
     }
-    
+
     .media-links {
         font-size: 1.2em;
         margin: 0 5px;
@@ -231,7 +232,7 @@ p {
     text-align: left;
     width: 100%;
     max-width: 300px; /* Adjust the max width as needed */
-    min-height: px; /* Ensures all cards are the same height */
+    min-height: 400px; /* Ensures all cards are the same height */
     display: flex;
     flex-direction: column;
     justify-content: space-between;

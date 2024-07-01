@@ -11,7 +11,7 @@
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <header>
+    <div class="header-container">
         <!-- Full-width Carousel wrapper -->
         <div id="carouselBasicExample" class="carousel slide carousel-fade" data-ride="carousel">
             <!-- Indicators -->
@@ -63,60 +63,55 @@
         </div>
         <!-- Carousel wrapper -->
 
-        <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid d-flex align-items-center">
                 <div class="ml-auto d-flex align-items-center">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto">
+                    <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="/">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" id="navbarDropdown" role="menubar" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownServices" role="menuitem" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Services
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown" role="menu">
-                                <a class="dropdown-item" href="/tutor" role="menuitem">Tutoring</a>
-                                <a class="dropdown-item" href="#" role="menuitem">Arts</a>
-                                <a class="dropdown-item" href="#" role="menuitem">Education</a>
-                                <a class="dropdown-item" href="#" role="menuitem">Technology</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" id="navbarDropdown" role="menubar" aria-haspopup="true" aria-expanded="false">
-                                About Us
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown" role="menu">
-                                <a class="dropdown-item" href="#" role="menuitem">Company Overview</a>
-                                <a class="dropdown-item" href="#" role="menuitem">History</a>
-                                <a class="dropdown-item" href="#" role="menuitem">Team</a>
-                                <a class="dropdown-item" href="#" role="menuitem">Mission, Vision, Core Values</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownServices">
+                                <a class="dropdown-item" href="/services/arts">Arts</a>
+                                <a class="dropdown-item" href="/services/education">Education</a>
+                                <a class="dropdown-item" href="/services/technology">Technology</a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/testimonials">Testimonials</a>
+                            <a class="nav-link" href="/about_us">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/events">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blog">Blogs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Contact Us</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" id="navbarDropdown" role="menubar" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMore" role="menuitem" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 More
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown" role="menu">
-                                <a class="dropdown-item" href="/blog" role="menuitem">Blog</a>
-                                <a class="dropdown-item" href="/events" role="menuitem">Events</a>
-                                <a class="dropdown-item" href="/contact" role="menuitem">Contact</a>
-                                <a class="dropdown-item" href="/admin" role="menuitem">Admin</a>
-                                <a class="dropdown-item" href="/tech_titans" role="menuitem">Tech Titans</a>
-                                <div class="dropdown-divider" role="separator"></div>
-                                <a class="dropdown-item" href="/faq" role="menuitem">FAQs</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMore">
+                                <a class="dropdown-item" href="/testimonials">Testimonials</a>
+                                <a class="dropdown-item" href="/content-vault">Content Vault</a>
+                                <a class="dropdown-item" href="/crunch-bunch-kids">Crunch Bunch Kids</a>
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-    </header>
+    </div>
+    <main class="container">
+        <!-- Main content goes here -->
+    </main>
