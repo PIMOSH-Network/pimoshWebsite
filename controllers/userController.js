@@ -1,4 +1,5 @@
 const model = require('../models/user');
+const tutor = require('../models/tutor');
 
 const { hostname } = require('os');
 
@@ -12,24 +13,36 @@ exports.getLogin = (req, res, next) => {
 };
 
 
-// const userModel = require('./models/user')
+exports.login = (req, res, next) => {
+    let email = req.body.email;
+    let password = req.body.password;
 
-// const newUser = new userModel({
-//     firstName: 'John',
-//     lastName: 'Doe',
-//     email: 'john.doe@example.com',
-//     password: 'hashedPassword'
-//   });
-  
-//   newUser.save()
-//     .then(savedUser => {
-//       console.log('User saved to database:', savedUser);
-//       // You can also redirect, send a response, or perform further actions here
-//     })
-//     .catch(err => {
-//       console.error('Error saving user to database:', err);
-//       // Handle error appropriately (e.g., show error messages, redirect, etc.)
-//     });
+    model.findOne({ email: email })
+        .then(user => {
+            if (!user) {
+                req.flash('error', 'Wrong email address');
+                res.redirect('/users/login'); // Corrected path for user not found
+            } else {
+                user.comparePassword(password)
+                    .then(result => {
+                        if (result) {
+                            req.session.user = user._id;
+                            req.flash('success', 'You have successfully logged in');
+                            res.redirect('/tutors/new'); // Corrected redirection path
+                        } else {
+                            req.flash('error', 'Wrong password');
+                            res.redirect('/users/login'); // Corrected path for incorrect password
+                        }
+                    })
+                    .catch(err => {
+                        req.flash('error', 'An error occurred while comparing passwords');
+                        res.redirect('/users/login');
+                    });
+            }
+        })
+        .catch(err => next(err));
+};
+
 
 exports.create = (req, res, next)=>{
     console.log('HELLO WORLD')

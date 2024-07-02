@@ -27,54 +27,6 @@ exports.validateSignUp = [body('firstName','First name is required ').notEmpty()
 exports.validateLogIn = [body('email','Email must be a valid email address').isEmail().trim().escape().normalizeEmail(), 
     body('password', 'Password must be at 8 characters and atmost 64 characters').isLength({min: 8, max: 64})];
 
-exports.validateResult = (req, res, next) => {
-        let errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            errors.array().forEach(error => {
-                req.flash('error', error.msg);
-            });
-            return res.redirect('back');
-        }
-        return next();
- };
-    
-
-//Middleware function to sanitize new event inputs
-exports.newEventValidator = [
-    body('title', 'Title is required').trim().escape().notEmpty(),
-    body('category', 'Category is required').trim().escape().isIn([
-        'Physical Meetup Events', 
-        'Online Meetup Events', 
-        'Fund Raising Event', 
-        'Outdoor Events',
-        'Outreach Events'
-    ]),
-    body('hostName', 'Invalid host ID').optional({ checkFalsy: true }).isMongoId(),
-    body('startDate', 'Start is required').notEmpty().isISO8601(),
-    body('endDate', 'End is required').notEmpty().isISO8601(),
-    body('location', 'Location cannot be empty').trim().escape().notEmpty(),
-    body('details', 'Details cannot be empty').trim().escape().notEmpty(),
-   ];
-
-   // Validate the status of an rsvp
-
-   exports.validateRsvpStatus = (req, res, next) => {
-
-    const status = req.body.status;
-    if (!status || status.trim() === "") {
-        req.flash('error', 'RSVP cannot be empty');
-        return res.redirect('back');
-    }
-    // check for more specific status values
-    const validStatuses = ['Yes', 'No', 'Maybe'];
-    if (!validStatuses.includes(status)) {
-        req.flash('error', 'RSVP can only be YES, NO or MAYBE');
-        return res.redirect('back');
-    }
-
-    next();
-
-};
 // Validate Start and End Date
 exports.validateStartEndDate = (req, res, next) => {
     const { startDate, endDate } = req.body;
@@ -97,4 +49,46 @@ exports.validateStartEndDate = (req, res, next) => {
     }
 
     next(); 
+};
+
+
+// Validation and sanitization middleware for tutor form
+exports.validateTutor = [
+    body('email', 'Please enter a valid email address').isEmail().trim().escape().normalizeEmail(),
+    body('name', 'Name is required').notEmpty().trim().escape(),
+    body('phone', 'Phone number must be 10 digits').isLength({ min: 10, max: 10 }).trim().escape().isNumeric(),
+    body('position', 'Position is required').notEmpty().trim().escape(),
+    body('employer1', 'Most recent employer is required').notEmpty().trim().escape(),
+    body('employer2', 'Employer number two is required').notEmpty().trim().escape(),
+    body('reference', 'Reference is required').notEmpty().trim().escape(),
+    body('source', 'Source is required').notEmpty().trim().escape()
+];
+
+// Middleware to check validation results
+exports.validateResult = (req, res, next) => {
+    let errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        errors.array().forEach(error => {
+            req.flash('error', error.msg);
+        });
+        return res.redirect('back');
+    }
+    next();
+};
+
+// Middleware to check file uploads
+exports.validateFiles = (req, res, next) => {
+    if (!req.files.coverLetter) {
+        req.flash('error', 'Cover letter is required');
+        return res.redirect('back');
+    }
+    if (!req.files.selfie) {
+        req.flash('error', 'Selfie is required');
+        return res.redirect('back');
+    }
+    if (!req.files.resume) {
+        req.flash('error', 'Resume is required');
+        return res.redirect('back');
+    }
+    next();
 };

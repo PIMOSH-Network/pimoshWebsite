@@ -5,9 +5,6 @@ const router = express.Router();
 // Set up Home Route 
 router.get('/', controller.getHome);
 
-// Set up Tutoring Route 
-router.get('/tutor', controller.getTutor);
-
 // Set up About Us Route 
 router.get('/about_us', controller.getAbout);
 

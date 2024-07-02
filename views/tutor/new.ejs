@@ -1,0 +1,88 @@
+<!-- views/new.ejs -->
+
+<%- include('../partials/header.ejs') %>
+
+<main class="container">
+    <h2>Apply for Tutor</h2>
+    <% if (errors && errors.length > 0) { %>
+        <div class="alert alert-danger">
+            <ul>
+                <% errors.forEach(error => { %>
+                    <li><%= error %></li>
+                <% }) %>
+            </ul>
+        </div>
+    <% } %>
+    <form action="/tutors" method="POST" enctype="multipart/form-data">
+        <div class="form-group row">
+            <label for="email" class="col-sm-3 col-form-label">Email</label>
+            <div class="col-sm-9">
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="name" class="col-sm-3 col-form-label">Name</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="phone" class="col-sm-3 col-form-label">Phone</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="phone" name="phone" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="position" class="col-sm-3 col-form-label">Position</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="position" name="position" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="employer1" class="col-sm-3 col-form-label">Most Recent Employer</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="employer1" name="employer1" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="employer2" class="col-sm-3 col-form-label">Employer Number Two</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="employer2" name="employer2" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="coverLetter" class="col-sm-3 col-form-label">Cover Letter</label>
+            <div class="col-sm-9">
+                <input type="file" class="form-control" id="coverLetter" name="coverLetter" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="selfie" class="col-sm-3 col-form-label">Selfie</label>
+            <div class="col-sm-9">
+                <input type="file" class="form-control" id="selfie" name="selfie" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="resume" class="col-sm-3 col-form-label">Resume</label>
+            <div class="col-sm-9">
+                <input type="file" class="form-control" id="resume" name="resume" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="reference" class="col-sm-3 col-form-label">Reference</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="reference" name="reference" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="source" class="col-sm-3 col-form-label">Source</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="source" name="source" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Application</button>
+    </form>
+</main>
+
+<%- include('../partials/footer.ejs') %>
+

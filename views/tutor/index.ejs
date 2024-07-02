@@ -1,0 +1,35 @@
+<%- include('../partials/header.ejs') %>
+
+<main class="container">
+    <h2>Your Tutor Applications</h2>
+    <a href="/tutor/new" class="btn btn-primary">Apply for Tutor</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Position</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% tutors.forEach(tutor => { %>
+            <tr>
+                <td><%= tutor.email %></td>
+                <td><%= tutor.name %></td>
+                <td><%= tutor.phone %></td>
+                <td><%= tutor.position %></td>
+                <td>
+                    <a href="/tutor/edit/<%= tutor._id %>" class="btn btn-warning">Edit</a>
+                    <form action="/tutor/<%= tutor._id %>?_method=DELETE" method="POST" style="display:inline;">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</main>
+
+<%- include('../partials/footer.ejs') %>

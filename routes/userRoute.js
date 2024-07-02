@@ -8,13 +8,15 @@ const router = express.Router();
 // Set up Interest Route 
 router.get('/signup', controller.getSignup);
 
-// Set up Interest Route 
+//POST /users: create a new user account
+router.post('/', controller.create);
+
+//POST /users/login: GET user's login form
 router.get('/login', controller.getLogin);
 
-//POST /users: create a new user account
-router.post('/', isGuest, validateSignUp, controller.create);
+
+//POST /users/login: authenticate user's login
+router.post('/login', controller.login);
 
 module.exports = router;
 
-// router.post('/', isGuest, validateSignUp, validateResult, controller.create);
-// validateResult is the issue present

@@ -1,7 +1,6 @@
 <%- include('../partials/header.ejs') %>
 
-
-<div class="main-body">
+<main class="container">
     <div class="container body-container">
         <div class="row mb-4">
             <div class="col-12">
@@ -10,7 +9,7 @@
         </div>
         <form method="POST" action="/users/login" enctype="application/x-www-form-urlencoded">
             <!-- Email -->
-            <div class="form-row align-items-center">
+            <div class="form-row align-items-center mb-3">
                 <div class="col-sm-3">
                     <label for="emailLogin">Email:</label>
                 </div>
@@ -19,7 +18,7 @@
                 </div>
             </div>
             <!-- Password -->
-            <div class="form-row align-items-center">
+            <div class="form-row align-items-center mb-3">
                 <div class="col-sm-3">
                     <label for="passwordLogin">Password:</label>
                 </div>
@@ -37,7 +36,7 @@
                 <p>Don't have an account? <a href="/users/signup">Sign up here</a>.</p>
             </div>
         </div>
-    <!-- </div> -->
-</div>
+    </div>
+</main>
 
 <%- include('../partials/footer.ejs') %>

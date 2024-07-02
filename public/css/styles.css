@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
 }
 
 /* HTML and Body */
@@ -25,7 +25,7 @@ h1, h2, h3 {
 }
 
 main {
-    /* flex: 1; */
+    flex: 1 0 auto; /* Allow main to grow and shrink */
     padding-top: 10px; /* Add padding to avoid content being hidden behind fixed navbar */
     padding-bottom: 10px; /* Add padding to avoid content being hidden behind fixed footer */
 }
@@ -47,7 +47,7 @@ p {
     width: 100%;
     display: flex;
     align-items: center;
-    position: fixed;
+    position: fixed; /* Changed to sticky */
     top: 0;
     z-index: 1000;
 }
@@ -126,7 +126,7 @@ p {
 .carousel {
     position: relative;
     z-index: 1;
-    margin-top: 70px; /* Add margin to avoid overlap with fixed navbar */
+    margin-top: 70px; /* Add margin to avoid overlap with navbar */
 }
 
 .carousel-item img {
@@ -252,4 +252,14 @@ p {
     top: -30px;
     left: 50%;
     transform: translateX(-50%);
+}
+/* Ensure form-control and form-control-file classes are properly styled */
+.form-control,
+.form-control-file {
+    width: 100%;
+}
+
+/* Additional margin for form groups */
+.form-group {
+    margin-bottom: 1rem;
 }

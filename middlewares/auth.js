@@ -19,3 +19,13 @@ exports.isLoggedIn = (req, res, next)=> {
         return res.redirect('/users/login');
     }
 }
+
+
+exports.ensureAuthenticated = (req, res, next) => {
+    if (req.session && req.session.user) {
+        return next();
+    } else {
+        req.flash('error', 'Please log in to view this resource');
+        res.redirect('/login');
+    }
+};
